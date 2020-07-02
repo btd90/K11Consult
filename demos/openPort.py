@@ -1,9 +1,12 @@
 #!/usr/bin/python
 
+import sys
 import serial
+
+sys.path.append('../lib')
 import serialThread
 
-PORT = serial.Serial('/home/eilidh/K11Consult/SCRIPT', 9600, timeout=None)
+PORT = serial.Serial('/home/ben/k11consult/K11Consult/SCRIPT', 9600, timeout=None)
 
 
 

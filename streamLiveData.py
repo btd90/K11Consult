@@ -19,10 +19,12 @@
 import os
 import sys
 import serial
+
+sys.path.append('lib')
 import serialThread
 from dials import *
 
-PORT = serial.Serial('/dev/pts/2', 9600, timeout=None)
+PORT = serial.Serial('/dev/pts/4', 9600, timeout=None)
 incomingData = serialThread.ReadStream(PORT,True)
 
 os.environ['SDL_VIDEO_WINDOW_POS'] = 'center'

@@ -21,7 +21,10 @@
 import os
 import sys
 import time
+
+sys.path.append('../lib')
 import dials as dd
+
 import pygame
 import pygame.camera
 from pygame.locals import *
@@ -32,9 +35,9 @@ os.environ['SDL_VIDEO_WINDOW_POS'] = 'center'
 
 size = width, height = 640, 480
 
-cam = pygame.camera.Camera("/dev/video0",(640,480))
+#cam = pygame.camera.Camera("/dev/video0",(640,480))
 # start the camera
-cam.start()
+#cam.start()
 
 pygame.display.set_caption('K11Consult')
 
@@ -113,7 +116,7 @@ while True:
             surface2Y = surface2FullscreenY
             #screen.fill(0x000000)
             #pygame.mouse.set_visible(False)
-            
+
 
 # Setting the surface fill to the surface color key fixes transparency
     surface1.fill(0x0000FF)
@@ -121,18 +124,18 @@ while True:
 
 
     dd.Dials().indicatorNeedle(surface1,TEMP_Value,148,150,280,dd.Dials.twenty,dd.Dials.BLACK,0,0,(TEMP_Max_Value / 10),6,3,1,True,True,"Temperature",dd.Dials.degree)
-    
-    
+
+
     if imageCounter % 1 == 0:
 	screen.blit(image,(surface2X,surface2Y))
-    
-    
+
+
     screen.blit(surface1,(surface1X,surface1Y))
-    
+
 
     #time.sleep(0.08)
 
-        
+
     if TEMP_Value < TEMP_Max_Value:
         TEMP_Value = TEMP_Value + 1
     else:

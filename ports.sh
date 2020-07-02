@@ -1,3 +1,3 @@
 #! /bin/sh
 
-socat PTY,link=CUTECOM PTY,link=SCRIPT
+socat PTY,link=MINICOM PTY,link=SCRIPT

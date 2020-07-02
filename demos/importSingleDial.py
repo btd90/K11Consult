@@ -21,7 +21,10 @@
 import os
 import sys
 import time
+
+sys.path.append('../lib')
 import dials as dd
+
 import pygame
 from pygame.locals import *
 

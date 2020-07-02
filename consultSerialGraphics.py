@@ -204,10 +204,12 @@ dial1Y = dial1WindowedY
 
 screen = pygame.display.set_mode(size)
 
-needle = pygame.image.load("needle.png").convert_alpha()
-background = pygame.image.load("dial.png").convert_alpha()
+needleFile = os.path.join('images', 'needle.png')
+needle = pygame.image.load(needleFile).convert_alpha()
+dialFile = os.path.join('images', 'dial.png')
+background = pygame.image.load(dialFile).convert_alpha()
 
-fontFifty = pygame.font.SysFont("Digital-7 Mono", 87)
+fontFifty = pygame.font.SysFont('Digital-7 Mono', 87)
 
 while READ_THREAD == False:
 
