@@ -16,14 +16,16 @@ pygame.display.set_caption('K11Consult / RPM')
 
 done = False
 screen.fill((0, 0, 255))
-needle = pygame.image.load("needle.png").convert_alpha()
-background = pygame.image.load("dial.png").convert_alpha()
+needleFile = os.path.join('../images', 'needle.png')
+needle = pygame.image.load(needleFile).convert_alpha()
+dialFile = os.path.join('../images', 'dial.png')
+background = pygame.image.load(dialFile).convert_alpha()
 backgroundRect = background.get_rect()
 #needle2 = needle
 counter = 120
 RPM_Value = 0
 
-fontFifty = pygame.font.SysFont("Digital-7 Mono", 86)
+fontFifty = pygame.font.SysFont('Digital-7 Mono', 86)
 surface1 = pygame.Surface((300,300))
 
 while not done:

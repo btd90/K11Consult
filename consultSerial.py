@@ -21,8 +21,10 @@ import math
 import serial
 import threading
 import datetime
+import pygame
+from pygame.locals import *
 
-PORT = serial.Serial('/home/eilidh/K11Consult/SCRIPT', 9600, timeout=None)
+PORT = serial.Serial('/home/ben/k11consult/K11Consult/SCRIPT', 9600, timeout=None)
 
 class ReadStream(threading.Thread):
 
@@ -169,51 +171,72 @@ while READ_THREAD == True:
 
     pygame.time.Clock().tick(60)
 
-    for event in pygame.event.get():
+    # for event in pygame.event.get():
+    #
+    #     if event.type==pygame.QUIT:
+    #         PORT.flushInput()
+    #         PORT.close()
+    #         sys.exit()
+    #
+    #     if event.type is KEYDOWN and event.key == K_q:
+    #         PORT.flushInput()
+    #         PORT.close()
+    #         sys.exit()
+    #
+    #     if event.type is KEYDOWN and event.key == K_w:
+    #         pygame.display.set_mode((width,height))
+    #         pygame.mouse.set_visible(False)
+    #         surface1X = surface1WindowedX
+    #         surface1Y = surface1WindowedY
+    #         surface2X = surface2WindowedX
+    #         surface2Y = surface2WindowedY
+    #         surface3X = surface3WindowedX
+    #         surface3Y = surface3WindowedY
+    #         surface4X = surface4WindowedX
+    #         surface4Y = surface4WindowedY
+    #         surface5X = surface5WindowedX
+    #         surface5Y = surface5WindowedY
+    #         surface6X = surface6WindowedX
+    #         surface6Y = surface6WindowedY
+    #         screen.fill(0x000000)
+    #
+    #     if event.type is KEYDOWN and event.key == K_f:
+    #         pygame.display.set_mode((monitorX,monitorY), FULLSCREEN)
+    #         surface1X = surface1FullscreenX
+    #         surface1Y = surface1FullscreenY
+    #         surface2X = surface2FullscreenX
+    #         surface2Y = surface2FullscreenY
+    #         surface3X = surface3FullscreenX
+    #         surface3Y = surface3FullscreenY
+    #         surface4X = surface4FullscreenX
+    #         surface4Y = surface4FullscreenY
+    #         surface5X = surface5FullscreenX
+    #         surface5Y = surface5FullscreenY
+    #         surface6X = surface6FullscreenX
+    #         surface6Y = surface6FullscreenY
+    #         screen.fill(0x000000)
+    #         pygame.mouse.set_visible(False)
 
-        if event.type==pygame.QUIT:
-            PORT.flushInput()
-            PORT.close()
-            sys.exit()
-
-        if event.type is KEYDOWN and event.key == K_q:
-            PORT.flushInput()
-            PORT.close()
-            sys.exit()
-
-        if event.type is KEYDOWN and event.key == K_w:
-            pygame.display.set_mode((width,height))
-            pygame.mouse.set_visible(False)
-            surface1X = surface1WindowedX
-            surface1Y = surface1WindowedY
-            surface2X = surface2WindowedX
-            surface2Y = surface2WindowedY
-            surface3X = surface3WindowedX
-            surface3Y = surface3WindowedY
-            surface4X = surface4WindowedX
-            surface4Y = surface4WindowedY
-            surface5X = surface5WindowedX
-            surface5Y = surface5WindowedY
-            surface6X = surface6WindowedX
-            surface6Y = surface6WindowedY
-            screen.fill(0x000000)
-
-        if event.type is KEYDOWN and event.key == K_f:
-            pygame.display.set_mode((monitorX,monitorY), FULLSCREEN)
-            surface1X = surface1FullscreenX
-            surface1Y = surface1FullscreenY
-            surface2X = surface2FullscreenX
-            surface2Y = surface2FullscreenY
-            surface3X = surface3FullscreenX
-            surface3Y = surface3FullscreenY
-            surface4X = surface4FullscreenX
-            surface4Y = surface4FullscreenY
-            surface5X = surface5FullscreenX
-            surface5Y = surface5FullscreenY
-            surface6X = surface6FullscreenX
-            surface6Y = surface6FullscreenY
-            screen.fill(0x000000)
-            pygame.mouse.set_visible(False)
+    ###
+    ### BEN TEST!!!
+    ### NOT SURE HOW TO SET SURFACEX VALUES.. REVISIT
+    ###
+    pygame.display.set_mode((100,100))
+    pygame.mouse.set_visible(False)
+    surface1X = surface1WindowedX
+    surface1Y = surface1WindowedY
+    surface2X = surface2WindowedX
+    surface2Y = surface2WindowedY
+    surface3X = surface3WindowedX
+    surface3Y = surface3WindowedY
+    surface4X = surface4WindowedX
+    surface4Y = surface4WindowedY
+    surface5X = surface5WindowedX
+    surface5Y = surface5WindowedY
+    surface6X = surface6WindowedX
+    surface6Y = surface6WindowedY
+    screen.fill(0x000000)
+    ###
 
     surface1.fill(0x000000)
     surface2.fill(0x0000FF)

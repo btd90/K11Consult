@@ -26,13 +26,15 @@ import os
 import sys
 import time
 import serial
+
+sys.path.append('../lib')
 import serialThread
 
 import pygame
 from pygame.locals import *
 pygame.init()
 
-PORT = serial.Serial('/home/eilidh/K11Consult/SCRIPT', 9600, timeout=None)
+PORT = serial.Serial('/home/ben/k11consult/K11Consult/SCRIPT', 9600, timeout=None)
 
 
 
@@ -78,10 +80,12 @@ dial1Y = dial1WindowedY
 
 screen = pygame.display.set_mode(size)
 
-needle = pygame.image.load("needle.png").convert_alpha()
-background = pygame.image.load("dial.png").convert_alpha()
+needleFile = os.path.join('../images', 'needle.png')
+needle = pygame.image.load(needleFile).convert_alpha()
+dialFile = os.path.join('../images', 'dial.png')
+background = pygame.image.load(dialFile).convert_alpha()
 
-fontFifty = pygame.font.SysFont("Digital-7 Mono", 87)
+fontFifty = pygame.font.SysFont('Digital-7 Mono', 87)
 
 MPH_Value = 0
 RPM_Value = 0
@@ -144,4 +148,3 @@ while True:
 
     #time.sleep(0.02)
     pygame.display.update()
-
